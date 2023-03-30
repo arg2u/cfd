@@ -1,0 +1,22 @@
+[package]
+name = "cfd"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+exclude = [".DS_Store"]
+description = "CFD is a tool that allows you to check one or more domains to see if they are protected by CloudFlare or not. The check is carried out based on five criteria: 3 headers in the HTTP response, IP, and SSL certificate issuer. The check result can be displayed on the screen or saved to a file."
+repository = "https://github.com/arg2u/cfd"
+documentation = "https://docs.rs/cfd"
+keywords = ["cloudflare", "dns", "api", "cli"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# reqwest = "0.11"
+reqwest = { version = "0.11", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+rustls = "0.20"
+webpki-roots = "0.22"
+x509-parser = "0.14.0"
+clap = { version = "4.1.5", features = ["derive"] }
+prettytable-rs = "0.10.0"
